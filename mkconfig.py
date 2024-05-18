@@ -12,14 +12,18 @@ class ConfigManager:
 
     def __init__(self):
         # Read initial configuration
-        self._read_cfg()
+        if os.path.exists(self._cfg_file):
+            self._read_cfg()
+        else:
+            err = f"Can't read '{self._cfg_file}'"
+            logging.error(err)
 
 
     def _read_cfg(self):
         """ Read the toml configuration file """
         try:
-            if os.path.exists(self._cfg_file):
-                self._cfg = toml.load(self._cfg_file)
+            self._cfg = toml.load(self._cfg_file)
+            print(self._cfg)
         except Exception as e:
             err = f"Can't read '{self._cfg_file}'"
             logging.error(f"{repr(e)} - {err}")
