@@ -1,0 +1,13 @@
+# mirk configuration file
+[Store]
+name = "Mirk"
+
+# bot admin
+[Admin]
+id = 1185692914 #your telegram id
+
+[Telegram]
+read_timeout = 30
+timed_out_pause = 10
+error_pause = 10 
+token = "your telegram bot token" 
