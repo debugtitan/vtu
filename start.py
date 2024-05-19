@@ -1,6 +1,5 @@
 import os
 import threading
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_setup')
 
 import logging
 from telegram import Chat, User, Bot
@@ -26,28 +25,21 @@ class MirkBotWorker(threading.Thread):
         self.chat = chat
         self.user = user
         self.conf = conf
-        self.loc = None
         
-        #Initialize django migrations
-        self._make_django_migrations()
-        
-    def _make_django_migrations(self):
-        
-        import django
-        try:
-            django.setup()
-            from django.core.management import call_command
-            log.debug("Running makemigrations...")
-            call_command('makemigrations', 'database')
-            log.debug("Makemigrations completed.")
+    def run(self):
+        log.info(f"Worker for chat {self.chat.id} started")
+        while self.running:
+            # Here you would add the logic for handling messages or tasks
+            log.info(f"Worker {self.chat.id} is running...")
+            #time.sleep(1)
 
-            # Apply migrations
-            log.debug("Running migrate...")
-            call_command('migrate','database')
-            log.debug("Migrate completed.")
+    def stop(self):
+        self.running = False
+        log.info(f"Worker for chat {self.chat.id} stopped")
+        
+    
+        
 
-        except Exception as e:
-            print(f"An error occurred: {e}")
 
 
 
