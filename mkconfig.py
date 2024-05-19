@@ -3,16 +3,16 @@ import toml
 import logging
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve(strict=True).parent
 
 class ConfigManager:
-    _cfg_file = os.path.join(BASE_DIR, "config", "config.toml")
+    _cfg_file = None
     _cfg = dict()
 
 
-    def __init__(self):
+    def __init__(self, cfg_file):
         # Read initial configuration
-        if os.path.exists(self._cfg_file):
+        if os.path.exists(cfg_file):
+            self._cfg_file = cfg_file
             self._read_cfg()
         else:
             err = f"Can't read '{self._cfg_file}'"
@@ -23,7 +23,6 @@ class ConfigManager:
         """ Read the toml configuration file """
         try:
             self._cfg = toml.load(self._cfg_file)
-            print(self._cfg)
         except Exception as e:
             err = f"Can't read '{self._cfg_file}'"
             logging.error(f"{repr(e)} - {err}")
