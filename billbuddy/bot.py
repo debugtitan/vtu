@@ -1,24 +1,25 @@
 from contextlib import suppress
 from telegram.ext import Application, CommandHandler
 
-from billbuddy.utils import logger
+from billbuddy.utils import logger, exceptions
 from billbuddy import config
 
 
 class BillBuddyBot:
     def __init__(self, token):
-        self.updater = self._setup_bot(token)
+        self.app = self._setup_bot(token)
 
     def _setup_bot(self, token):
         return Application.builder().token(token).build()
 
     def run(self):
         logger.info("Bot start up!")
-        self.updater.run_polling()
+        self.app.run_polling()
 
-
-if __name__ == "__main__":
-    with suppress(KeyboardInterrupt):
-        token: str = config.BOT_TOKEN
-        bot = BillBuddyBot(token)
-        bot.run()
+    @staticmethod
+    @exceptions.exception_handlers
+    def start(token):
+        with suppress(KeyboardInterrupt):
+            token: str = config.BOT_TOKEN
+            bot = BillBuddyBot(token)
+            bot.run()
