@@ -1,5 +1,7 @@
 import logging
 
+from billbuddy.utils.config_manager import ConfigManager
+
 # Start logging setup
 logger = logging.getLogger("app")
 
@@ -23,3 +25,5 @@ logger.root.addHandler(console_log)
 
 # Log a debug message
 logger.debug("BillBuddy Logger")
+
+cfg = ConfigManager()
