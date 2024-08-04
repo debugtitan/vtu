@@ -43,8 +43,9 @@ class ReactionType(BaseEnum):
     DONE = "✅"
     CANCEL = "❌"
     PROCEED = "▶️"
-    
+
+
 class AccountType(BaseEnum):
-    ADMIN = "ADMINISTRATOR"
+    ADMIN = "ADMIN"
     OWNER = "OWNER"
-    CLIENT = "USER"
+    CLIENT = "CLIENT"
