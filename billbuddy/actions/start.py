@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from billbuddy.utils import decorators, cfg, keyboards
+from billbuddy.utils import constants, decorators, cfg
 
 
 @decorators.is_valid_response
@@ -18,4 +18,4 @@ async def start_command_handler(
     msg_temp: str = cfg.get("START").get(language_code, cfg.get("START").get("en"))
     msg = msg_temp.format(first_name.capitalize())
 
-    await update.message.reply_text(msg, reply_markup=keyboards.start_menu())
+    await update.message.reply_text(msg, reply_markup=constants.start_menu())
