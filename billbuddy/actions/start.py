@@ -1,7 +1,9 @@
-from telegram import Update
+from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ContextTypes
+from telegram.constants import ParseMode
 
-from billbuddy.utils import constants, decorators, cfg
+from billbuddy.utils import decorators, cfg, helpers
+from billbuddy.resources.dao import user_exists, add_user
 
 
 @decorators.is_valid_response
@@ -10,12 +12,18 @@ async def start_command_handler(
 ) -> None:
     """display message on start command"""
     user = update.message.from_user
-    user_id = user.id
-    username = user.username
-    first_name = user.first_name
-    language_code = user.language_code
-    is_premium_account = user.is_premium
-    msg_temp: str = cfg.get("START").get(language_code, cfg.get("START").get("en"))
-    msg = msg_temp.format(first_name.capitalize())
+    if await user_exists(user.id):
+        return  # redirect to menu
+    await add_user(first_name=user.first_name, tg_id=user.id, username=user.username)
 
-    await update.message.reply_text(msg, reply_markup=constants.start_menu())
+    msg_template: str = cfg("start.toml").get("START")["en"]
+    keyboard_template: list = cfg("start.toml").get("KEYBOARDS")["en"]
+
+    msg = msg_template.format(user.first_name)
+    await update.message.reply_text(
+        msg,
+        parse_mode=ParseMode.MARKDOWN,
+        reply_markup=ReplyKeyboardMarkup(
+            helpers.create_keyboard_button(keyboard_template), resize_keyboard=True
+        ),
+    )
