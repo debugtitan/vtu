@@ -5,11 +5,13 @@ from pathlib import Path
 
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent
-CONFIG_PATH = os.path.join(BASE_DIR, "localization.toml")
 
 
 class ConfigManager:
-    _cfg = toml.load(CONFIG_PATH)
+
+    def __init__(self, file_name: str) -> None:
+        FILE_DIR = os.path.join(BASE_DIR, "localization", file_name)
+        self._cfg = toml.load(FILE_DIR)
 
     def get(self, *keys):
         """get value of the given key(s) from configuration file"""
