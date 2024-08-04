@@ -2,7 +2,7 @@ from telegram import KeyboardButton, ReplyKeyboardMarkup
 from billbuddy.utils import enums
 from billbuddy.utils import cfg
 
-MENU_BUTTONS = [
+MENU_BUTTONS = button_names = [
     "📲 Buy Airtime/Data",
     "💡 Pay Bills",
     "💸 Transfer Funds",
@@ -23,6 +23,5 @@ MENU_BUTTONS = [
     "🏦 Bank Integration",
     "🔔 Customizable Alerts",
     "🏅 Loyalty Program",
+    "🔗 One-Click Payment",
 ]
-
-
