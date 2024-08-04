@@ -3,9 +3,10 @@ from telegram.ext import Application, CommandHandler
 
 from billbuddy.utils import logger, exceptions
 from billbuddy import config
-
+from billbuddy.resources import connection
 from billbuddy.actions import start
 
+connection.Base.metadata.create_all(connection.engine)
 
 class BillBuddyBot:
     def __init__(self, token):
