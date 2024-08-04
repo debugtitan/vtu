@@ -1,0 +1,12 @@
+[START]
+en =  """
+**Hey there, {}! 🎉 Welcome to BillBuddy!**
+
+We're thrilled to have you on board. 🌟 To get started, please choose your preferred language from the list below. This will help us make your experience as smooth and enjoyable as possible.
+
+Select your language and let’s dive in! 🚀
+"""
+
+[KEYBOARDS]
+en= ["🇬🇧 English","🇪🇸 Spanish"]
+
