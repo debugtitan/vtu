@@ -8,5 +8,5 @@ Select your language and let’s dive in! 🚀
 """
 
 [KEYBOARDS]
-en= ["🇬🇧 English","🇪🇸 Spanish"]
-
+en= {"🇬🇧 English"="en","🇪🇸 Spanish"="es"}
+es = {"🇬🇧 Englash"="en","🇪🇸 Espanol"="es"}
