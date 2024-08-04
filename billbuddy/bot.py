@@ -21,6 +21,9 @@ class BillBuddyBot:
         self.app.add_handler(CommandHandler("start", start.start_command_handler))
 
         self.app.run_polling()
+        
+    def stop(self):
+        self.app.stop_running()
 
     @staticmethod
     @exceptions.exception_handlers
