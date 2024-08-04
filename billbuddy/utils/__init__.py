@@ -26,4 +26,5 @@ logger.root.addHandler(console_log)
 # Log a debug message
 logger.debug("BillBuddy Logger")
 
-cfg = ConfigManager()
+def cfg(file_name: str):
+    return ConfigManager(file_name)
