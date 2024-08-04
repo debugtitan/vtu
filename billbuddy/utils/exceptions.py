@@ -1,6 +1,7 @@
 import logging
 import sys
 import time
+from httpx import ConnectError
 from telegram.error import Forbidden, InvalidToken, NetworkError, TimedOut, BadRequest
 
 from billbuddy import config
@@ -41,8 +42,7 @@ def exception_handlers(func):
             except NetworkError as error:
                 log.error(
                     f"Network error while calling {func.__name__}(),"
-                    f" retrying in {config.TIMED_OUT_PAUSE} secs...\n"
-                    f"Full error: {error.message}"
+                    f" retrying in {config.TIMED_OUT_PAUSE} secs..."
                 )
                 time.sleep(config.TIMED_OUT_PAUSE)
                 continue

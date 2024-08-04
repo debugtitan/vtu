@@ -1,0 +1,9 @@
+[KEYBOARDS]
+
+en = {"buttons"= [ "📲 Buy Airtime/Data","💡 Pay Bills","💸 Transfer Funds","📊 Transaction History","💳 Check Balance","🎁 Promotions","⚙️ Account Settings","❓ Help","👥 Referral Program","₿ Crypto Payments","🌐 Multi-Language Support","🔗 One-Click Payment"],"headers"= "💳 Check Balance", "footers"= ["🌐 Multi-Language Support", "❓ Help","⚙️ Account Settings"]}
+
+es = {"buttons"= [ "📲 Comprar tiempo aire/datos","💡 Pagar facturas","💸 Transferir fondos","📊 Historial de transacciones","💳 Consultar saldo","🎁 Promociones","⚙️ Configuración de cuenta","❓ Ayuda","👥 Programa de referencias","₿ Pagos criptográficos" ,"🌐 Soporte multilingüe","🔗 Pago con un clic"],"headers"= " 💳 Consultar saldo", "footers"= ["🌐 Soporte multilingüe", "❓ Ayuda","⚙️ Configuración de cuenta"]}
+
+[MESSAGE]
+en = "🏘 Main Menu"
+es = "🏘 Menú principals"

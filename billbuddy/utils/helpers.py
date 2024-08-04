@@ -5,6 +5,9 @@ from telegram import KeyboardButton, InlineKeyboardButton
 def create_keyboard_button(
     buttons, buttons_per_column=1, button_header=None, button_footer=None
 ):
+    # Check if button_footer is not None
+    if button_footer is None:
+        button_footer = []
 
     main_buttons = (
         buttons

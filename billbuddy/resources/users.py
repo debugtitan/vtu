@@ -19,6 +19,7 @@ class Users(enums.BaseModelMixin, Base):
     account_type = Column(
         Enum(enums.AccountType), default=enums.AccountType.CLIENT.value, nullable=False
     )
+    language_code = Column(String, default="es", nullable=False)
     phone_number = Column(String, nullable=True)
     wallet = Column(String, nullable=True)
     is_restricted = Column(Boolean, default=False)

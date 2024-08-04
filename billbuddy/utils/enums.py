@@ -43,6 +43,7 @@ class ReactionType(BaseEnum):
     DONE = "✅"
     CANCEL = "❌"
     PROCEED = "▶️"
+    ROCKET = "🚀"
 
 
 class AccountType(BaseEnum):

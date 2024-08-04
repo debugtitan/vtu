@@ -1,4 +1,6 @@
 from typing import Optional
+
+from telegram import User
 from billbuddy.resources.users import Users
 from billbuddy.resources.connection import db_dependacy, Session
 
@@ -18,3 +20,16 @@ async def add_user(
     db.add(new_user)
     db.commit()
     return
+
+
+async def get_user(tg_id: int, db=db_dependacy):
+    user = db.query(Users).filter(Users.tg_id == tg_id).first()
+    return user
+
+
+async def setup_user_language(tg_id: int, lang_code: str, db=db_dependacy):
+    user = db.query(Users).filter(Users.tg_id == tg_id).first()
+    if user:
+        user.language_code = lang_code
+        db.commit()
+        return
