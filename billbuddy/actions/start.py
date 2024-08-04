@@ -1,4 +1,4 @@
-from telegram import Update, ReplyKeyboardMarkup
+from telegram import Update, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from telegram.constants import ParseMode
 
@@ -13,6 +13,7 @@ async def start_command_handler(
     """display message on start command"""
     user = update.message.from_user
     if await user_exists(user.id):
+        keyboard_template: list = cfg("start.toml").get("KEYBOARDS")["en"]
         return  # redirect to menu
     await add_user(first_name=user.first_name, tg_id=user.id, username=user.username)
 
@@ -23,7 +24,7 @@ async def start_command_handler(
     await update.message.reply_text(
         msg,
         parse_mode=ParseMode.MARKDOWN,
-        reply_markup=ReplyKeyboardMarkup(
-            helpers.create_keyboard_button(keyboard_template), resize_keyboard=True
+        reply_markup=InlineKeyboardMarkup(
+            helpers.create_inline_button(keyboard_template)
         ),
     )
