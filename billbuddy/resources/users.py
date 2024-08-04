@@ -9,8 +9,8 @@ class Users(enums.BaseModelMixin, Base):
     """Default user models for billbuddy telegram app"""
 
     first_name = Column(String)
-    last_name = Column(String, nullable=True)
-    username = Column(String, unique=True)
+    # last_name = Column(String, nullable=True)
+    username = Column(String, unique=True, nullable=True)
     tg_id = Column(Integer, unique=True)
     email = Column(String, nullable=True)
     balance = Column(
