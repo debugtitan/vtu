@@ -17,32 +17,18 @@ View detailed records of all your transactions.
 💳 **Check Balance**  
 Instantly check your VTU wallet balance.
 
-🎁 **Promotions/Offers**  
+🎁 **Promotions**  
 Discover and take advantage of exclusive promotions.
-
-🛠️ **Customer Support**  
-Reach out to our support team for assistance.
 
 ⚙️ **Account Settings**  
 Manage and update your account settings.
 
-❓ **Help/FAQ**  
+❓ **Help**  
 Find answers to common questions and get help.
 
 👥 **Referral Program**  
 Invite friends and earn rewards for referrals.
 
-🤖 **AI Assistant**  
-Get assistance from our intelligent AI assistant.
-
-🔒 **Fraud Detection**  
-Stay protected with our advanced fraud detection.
-
-📈 **Analytics**  
-Analyze your spending and usage patterns.
-
-🎙️ **Voice Commands**  
-Interact with the bot using voice commands.
 
 ₿ **Crypto Payments**  
 Make payments using cryptocurrency.
@@ -50,20 +36,78 @@ Make payments using cryptocurrency.
 🌐 **Multi-Language Support**  
 Switch to your preferred language for convenience.
 
-📍 **Geo-targeted Offers**  
-Access deals and offers based on your location.
-
-🏦 **Bank Integration**  
-Seamlessly link and manage your bank accounts.
-
-🔔 **Customizable Alerts**  
-Set up alerts for balances, bills, and offers.
-
-🏅 **Loyalty Program**  
-Earn points and rewards with our loyalty program.
 
 🔗 **One-Click Payment**  
 generate link and send to a user to receive quick payment
 
 ---
+"""
+es = """
+**Menú de servicios de BillBuddy**
+
+📲 **Comprar tiempo aire/datos**
+Comprar tiempo aire o datos para cualquier red fácilmente.
+**Menú de servicios de BillBuddy**
+
+📲 **Comprar tiempo aire/datos**
+Comprar tiempo aire o datos para cualquier red fácilmente.
+**BillBuddy Services Menu**
+
+📲 **Buy Airtime/Data**
+Buy airtime or data for any network easily.
+**Menú de servicio BillBuddy**
+
+📲 **Comprar tiempo aire/datos**
+Compra tiempo aire o datos para cualquier red fácilmente.
+**BillBuddy Service Menu**
+
+📲 **Buy Airtime/Data**
+Buy airtime or data for any network easily.
+**Menú de servicio de BillBuddy**
+
+📲 **Comprar Tiempo Aire/Datos**
+Compra fácilmente tiempo aire o datos para cualquier red.
+**BillBuddy Service Menu**
+
+📲 **Buy Airtime/Data**
+Easily purchase airtime or data for any network.
+
+
+💡 **Pagar facturas**
+Liquida tus facturas de servicios públicos de forma rápida y segura.
+
+💸 **Transferir fondos**
+Transfiere dinero sin esfuerzo a otros usuarios.
+
+📊 **Historial de transacciones**
+Ve registros detallados de todas tus transacciones.
+
+💳 **Consultar saldo**
+Consulta al instante el saldo de tu billetera VTU.
+
+🎁 **Promociones**
+Descubre y aprovecha promociones exclusivas.
+
+⚙️ **Configuración de la cuenta**
+Administra y actualiza la configuración de tu cuenta.
+
+❓ **Ayuda**
+Encuentra respuestas a preguntas frecuentes y obtén ayuda.
+
+👥 **Programa de referencias**
+Invita a tus amigos y gana recompensas por referencias.
+
+₿ **Pagos con criptomonedas**
+Realice pagos con criptomonedas.
+
+🌐 **Compatibilidad con varios idiomas**
+Cambie a su idioma preferido para mayor comodidad.
+
+🔗 **Pago con un solo clic**
+Genere un enlace y envíelo a un usuario para recibir un pago rápido
+
+---
+Send feedback
+Translation results available 
+
 """
