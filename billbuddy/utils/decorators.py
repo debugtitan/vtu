@@ -49,6 +49,19 @@ def private_chat_only(func):
     return command_func
 
 
+def language_code(func):
+    @wraps(func)
+    async def command_func(update: Update, context, *args, **kwargs):
+        try:
+            user_id = update.message.from_user.id
+        except AttributeError as err:
+            user_id = update.callback_query.from_user.id
+        user = await get_user(user_id) or await get_user(user_id)
+        return await func(update, context, *args, lang=user.language_code, id=user_id)
+
+    return command_func
+
+
 def user_restricted(func):
     """function that you want to restrict access to for certain users."""
 
@@ -73,6 +86,7 @@ def is_valid_response(func):
     @wraps(func)
     @private_chat_only
     @user_restricted
+    @language_code
     @send_action(ChatAction.TYPING)
     async def wrapper(update, callback, *args, **kwargs):
         await func(update, callback, *args, **kwargs)
