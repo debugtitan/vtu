@@ -8,3 +8,8 @@ To get started, please choose your preferred language from the list below. This 
 [KEYBOARDS]
 en= {"🇬🇧 English"="en","🇪🇸 Spanish"="es"}
 es = {"🇬🇧 Englash"="en","🇪🇸 Espanol"="es"}
+
+
+[LANGUAGE_MESSAGE]
+en = "ℹ please choose your preferred language"
+es = "ℹ Por favor, seleccione su idioma preferido"
