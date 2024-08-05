@@ -9,7 +9,7 @@ from billbuddy.resources.dao import user_exists, add_user
 
 @decorators.is_valid_response
 async def start_command_handler(
-    update: Update, context: ContextTypes.DEFAULT_TYPE
+    update: Update, context: ContextTypes.DEFAULT_TYPE, *args, **kwargs
 ) -> None:
     """display message on start command"""
     user = update.message.from_user
