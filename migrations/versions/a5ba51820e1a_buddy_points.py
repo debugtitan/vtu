@@ -20,7 +20,10 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
-    op.add_column("users", sa.Column("buddy_points", sa.Integer(), default=0))
+    op.add_column(
+        "users",
+        sa.Column("buddy_points", sa.Integer(), nullable=False, server_default="0"),
+    )
 
 
 def downgrade() -> None:
