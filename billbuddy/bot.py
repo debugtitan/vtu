@@ -10,7 +10,14 @@ from telegram.ext import (
 from billbuddy.utils import logger, exceptions
 from billbuddy import config
 from billbuddy.resources import connection
-from billbuddy.actions import start, inline_handlers, menu, localization, help_faq
+from billbuddy.actions import (
+    start,
+    inline_handlers,
+    menu,
+    localization,
+    help_faq,
+    balance,
+)
 
 connection.Base.metadata.create_all(connection.engine)
 
@@ -48,6 +55,13 @@ class BillBuddyBot:
             MessageHandler(
                 filters.Regex("^(❓ Help|❓ Ayuda)$"),
                 help_faq.help_message_handler,
+            )
+        )
+
+        self.app.add_handler(
+            MessageHandler(
+                filters.Regex("^(💳 Check Balance|💳 Consultar saldo)$"),
+                balance.balance_handler,
             )
         )
 

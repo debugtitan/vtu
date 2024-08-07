@@ -1,0 +1,14 @@
+[BAL]
+en= """
+💳 Your Balance & Buddy Points 💳
+
+✨ Current Balance: ${}
+🌟 Buddy Points: {}
+"""
+
+es = """
+💳 Tu saldo y puntos Buddy 💳
+
+✨ Saldo actual: ${}
+🌟 Puntos Buddy: {}
+"""
