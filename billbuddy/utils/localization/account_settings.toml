@@ -1,0 +1,8 @@
+[MESSAGE]
+en = "Here you can manage your profile, payment methods, security settings, and more to enhance your VTU experience"
+es = "Aquí puede administrar su perfil, métodos de pago, configuraciones de seguridad y más para mejorar su experiencia en VTU"
+
+[KEYBOARDS]
+en ={buttons=["👤 Profile Information","💳 Payment Methods","🔔 Notification Settings","🔒 Security Settings","🔙 Back"],footers=["🔙 Back"]}
+
+es = {buttons=["👤 Información del perfil","💳 Métodos de pago","🔔 Configuración de notificaciones","🔒 Configuración de seguridad","🔙 Volver"], footers=["🔙 Volver"]}

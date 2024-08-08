@@ -16,7 +16,7 @@ class Users(enums.BaseModelMixin, Base):
     balance = Column(
         DECIMAL(precision=20, scale=2), default=lambda: Decimal("0.00"), nullable=False
     )
-    buddy_points = Column(Integer,default=0)
+    buddy_points = Column(Integer, default=0)
     account_type = Column(
         Enum(enums.AccountType), default=enums.AccountType.CLIENT.value, nullable=False
     )
@@ -24,6 +24,7 @@ class Users(enums.BaseModelMixin, Base):
     phone_number = Column(String, nullable=True)
     wallet = Column(String, nullable=True)
     is_restricted = Column(Boolean, default=False)
+    navigator_id = Column(Integer, default=0)
 
     @property
     def is_admin(self):
